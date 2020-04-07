@@ -23,7 +23,7 @@ namespace family{
             ~Tree();
             Tree(string);
             Tree& addFather(string, string);
-            Tree& addMother(string , string );
+            Tree& addMother(string , string);
             string relation(string );
             string find(string );
             Node remove(string );

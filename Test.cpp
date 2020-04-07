@@ -26,7 +26,7 @@ using namespace family;
 //     CHECK(T.relation("Sheli") == "unrelated");
 //     CHECK(T.relation("Michael") == "unrelated");
 //     CHECK(T.relation("Omer") == "unrelated");
-// };
+// }
 
 
 // TEST_CASE("find test case"){
@@ -52,7 +52,35 @@ using namespace family;
 //     CHECK(T.find("cousin") == "Exption");
 //     CHECK(T.find("uncle") == "Exption");
 //     CHECK(T.find("aunt") == "Exption");
-// };
+// }
+
+// TEST_CASE("find test case"){
+//     family::Tree T("Dor");
+//      T.addFather("Dor","Haim").addMother("Dor","Dana")
+//     .addFather("Haim","Yossi").addMother("Dana","Yuval")
+//     .addFather("Yossi", "Shaked").addMother("Yuval", "Shoval")
+//     .addFather("Shaked", "Dan").addMother("Shoval", "Yafa")
+//     .addFather("Dan","Gilad").addMother("Yafa","Daniel");
+//     CHECK(T.find("me") == "Dor");
+//     CHECK(T.find("father") == "Haim");
+//     CHECK(T.find("mother") == "Dana");
+//     CHECK(T.find("grandfather") == "Yossi");
+//     CHECK(T.find("grandmother") == "Yuval");
+//     CHECK(T.find("great-great-grandfather") == "Shaked");
+//     CHECK(T.find("great-great-grandfather") == "Shoval");
+//     CHECK(T.find("great-great-great-grandfather") == "Dan");
+//     CHECK(T.find("great-great-great-grandfather") == "Yafa");
+//     CHECK(T.find("great-great-great-great-grandfather") == "Gilad");
+//     CHECK(T.find("great-great-great-great-grandfather") == "Daniel");
+//     CHECK(T.find("brother") == "Exption");
+//     CHECK(T.find("sister") == "Exption");
+//     CHECK(T.find("cousin") == "Exption");
+//     CHECK(T.find("uncle") == "Exption");
+//     CHECK(T.find("aunt") == "Exption");
+// }
+
+
+
 
 
 TEST_CASE("find check"){
@@ -61,7 +89,7 @@ TEST_CASE("find check"){
     for (int i = 0; i <100 ; ++i) {
         CHECK(T.find("find")=="Dana");
     }
-};
+}
 
 
 

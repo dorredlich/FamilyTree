@@ -13,8 +13,7 @@ namespace family{
    
 
     Tree::Tree(string childName){
-        Node name(childName);
-        this->root = &name;
+       this->root = new Node(childName);
     }
 
     Tree::~Tree(){
