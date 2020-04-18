@@ -22,7 +22,6 @@ namespace family{
             Node *root;
         public:
             Tree();
-        //    ~Tree();
             Tree(string);
             Tree& addFather(string, string);
             Tree& addMother(string , string);

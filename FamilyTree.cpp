@@ -22,7 +22,6 @@ namespace family{
     }
     Tree::Tree(): root(NULL){}
    
-
     Tree::Tree(string childName){
        this->root = new Node(childName);
        root->father = nullptr;
@@ -30,11 +29,6 @@ namespace family{
        root->parent_type = "me";
        root->depth = 0;
     }
-
-    // Tree::~Tree(){
-    //     if(root != NULL)
-    //         delete this->root;
-    // }
 
   Node* getNode(Node* node, string s){
         if(node->name == s)return node;
@@ -101,7 +95,7 @@ namespace family{
         }
     }
     
-       void findRecu(Node* node, string relationType, string &ans){
+    void findRecu(Node* node, string relationType, string &ans){
         if(node == NULL)return;
         if(node->mother != NULL && relationType == "grandmother" && node->mother->mother != NULL){
             ans = node->mother->mother->name;
@@ -136,7 +130,7 @@ namespace family{
         
     }
 
-      void deleteNode(Node** node){
+    void deleteNode(Node** node){
         if(*node != NULL){
             deleteNode(&((*(node))->mother));
             deleteNode(&((*(node))->father));
@@ -145,7 +139,7 @@ namespace family{
         }
     }
 
-     void Tree::remove(string name){
+    void Tree::remove(string name){
         Node* current = getNode(this->root,name);
         if(current->name == this->root->name) __throw_invalid_argument("Can't delete the root");
         Node** cu = &current;
@@ -158,23 +152,23 @@ namespace family{
 
 //https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
     void Tree::print2DUtil(Node *root, int space) {  
-    // Base case  
-    if (root == NULL)  
-        return;  
+        // Base case  
+        if (root == NULL)  
+            return;  
   
-    // Increase distance between levels  
-    space += COUNT;  
-    // Process right child first  
-    print2DUtil(root->father, space);  
-    // Print current node after space  
-    // count  
-    cout << endl;  
-    for (int i = COUNT; i < space; i++)  
-        cout<<" ";  
-    cout<< root->name << endl;  
+        // Increase distance between levels  
+        space += COUNT;  
+        // Process right child first  
+        print2DUtil(root->father, space);  
+        // Print current node after space  
+        // count  
+        cout << endl;  
+        for (int i = COUNT; i < space; i++)  
+            cout<<" ";  
+        cout<< root->name << endl;  
   
-    // Process left child  
-    print2DUtil(root->mother, space);  
+        // Process left child  
+        print2DUtil(root->mother, space);  
 }  
 
     void Tree::display(){
